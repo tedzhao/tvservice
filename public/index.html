@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        function save() {
+            fetch('./urls', {
+                method: 'POST',
+                headers: {
+                    'Content-type': 'application/json',
+                    Accept: 'application/json',
+                },
+                body: JSON.stringify({
+                    text: document.getElementById('textarea').value,
+                }),
+            })
+        }
+    </script>
+</head>
+<body>
+    <button onclick="save()">保存</button>
+    <textarea id="textarea" style="height: 100vh; width: 100%;">{{text}}</textarea>
+</body>
